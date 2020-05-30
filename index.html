@@ -41,7 +41,7 @@
     <section class="row log" v-if="turns.length > 0">
         <div class="small-12 columns">
             <ul>
-                <li v-for="item in turns" v-if="isPlayer ? '{backgroundColor:green}': '{backgroundColor:red}'">
+                <li v-for="item in turns" :class="{ 'player-turn' : item.isPlayer , 'monster-turn' : !item.isPlayer}">
 
                     {{item.text}}
                 </li>
